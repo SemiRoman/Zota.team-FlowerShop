@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+}
+
+#header {
+  height: 100vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.mouse-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #80c7f4, #d88bf9, #2854e2);
+  pointer-events: none;
+  z-index: 4;
+  filter: blur(100px);
+  opacity: 0.5;
+  /* transition: background 0.3s ease; */
+}
+
+.landing-page-header-text {
+  height: 100%;
+  width: 60vw;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(7px);
+  border-radius: 10px;
+  padding-left: 15%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.landing-page-header-text .elements {
+  width: 95%;
+}
+
+.landing-page-header-text .elements p {
+  width: 70%;
+  padding-bottom: 20px;
+}
+
+.hero-text {
+  font-weight: bold;
+  font-size: 4.5em;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  padding-bottom: 20px;
+}
+
+span {
+  background: radial-gradient(
+    circle at 45% 50%,
+    #80c7f4,
+    #2854e2 80%,
+    #dd9ef8 100%
+  );
+  font-family: "Special Gothic Expanded One", sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#shop-button {
+  background: radial-gradient(
+    circle at 45% 50%,
+    #80c7f4 0%,
+    #2854e2 65%,
+    #d88bf9 100%
+  );
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10%;
+  padding: 0.8em 1.5em;
+  gap: 0.6em;
+  transition: all 0.3s ease-in-out;
+}
+
+#shop-button a {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+#shop-button:hover {
+  transform: scale(1.02);
+}
+
+.fa-arrow-right {
+  background-color: rgba(245, 244, 244, 0.9);
+  border-radius: 50%;
+  padding: 8px 9px;
+  color: rgb(41, 40, 40);
+  font-size: 0.95em;
+  margin-right: -3px;
+  margin-left: 15px;
+}
+
+.counters {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.counters h1 {
+  width: 10%;
+  font-size: 35px;
+}
+
+.counters span {
+  font-size: 45%;
+  margin-top: -5px;
+  position: absolute;
+  background: radial-gradient(
+    circle at 50% 45%,
+    #80c7f4,
+    #2854e2 80%,
+    #d88bf9 100%
+  );
+  font-family: "Special Gothic Expanded One", sans-serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-images {
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+}
+
+.colored-flowers,
+.incolor-flowers {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-images .colored-flowers #img1 {
+  width: 90%;
+  transform: rotate(30deg);
+}
+.header-images .colored-flowers #img2 {
+  position: absolute;
+  width: 70%;
+  transform: rotate(-30deg);
+  top: 25%;
+  left: -15%;
+}
+.header-images .colored-flowers #img3 {
+  position: absolute;
+  width: 50%;
+  transform: rotate(120deg);
+  top: 80%;
+  left: 15%;
+}
+
+.header-images .incolor-flowers #img4 {
+  position: absolute;
+  width: 10%;
+  transform: rotate(30deg);
+  top: -15%;
+  left: -80%;
+}
+.header-images .incolor-flowers #img5 {
+  position: absolute;
+  width: 15%;
+  transform: rotate(-30deg);
+  top: 110%;
+  left: 70%;
+}
+.header-images .incolor-flowers #img6 {
+  position: absolute;
+  width: 30%;
+  transform: rotate(120deg);
+  top: 115%;
+  left: 75%;
+}
+.header-images .colored-flowers #img7 {
+  position: absolute;
+  width: 20%;
+  transform: rotate(30deg);
+  top: 115%;
+  left: -85%;
+}
