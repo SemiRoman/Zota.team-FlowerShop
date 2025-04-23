@@ -11,12 +11,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Florarie-Noir Flowers</title>
+    <title>Noir Flowers</title>
   </head>
-  <script src="script.js"></script>
+  <script src="../js/script.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEHkIAN0Aif0moMZWeYmCSIdMJMqL465Q&callback=initMap"
+    async
+    defer
+  ></script>
+
   <body>
-    <div class="mouse-blur"></div>
-    <section id="header">
+    <header id="header">
+      <ul class="nav-bar">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <div class="landing-page-header-text">
         <div class="elements">
           <h1 class="hero-text">
@@ -47,7 +59,6 @@
           <img src="..\images\flower-glass-color1.png" alt="" id="img1" />
           <img src="..\images\flower-glass-color2.png" alt="" id="img2" />
           <img src="..\images\flower-glass-color3.png" alt="" id="img3" />
-          <img src="..\images\flower-glass-color4.png" alt="" id="img7" />
         </div>
 
         <div class="incolor-flowers">
@@ -56,6 +67,127 @@
           <img src="..\images\flower-glass-incolor3.png" alt="" id="img6" />
         </div>
       </div>
+
+      <aside class="glow-aside">
+        <div class="aside-content">
+          <img src="..\images\flower-glass-golden1.png" alt="" />
+          <h3>Golden Pass VIP</h3>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi illum
+            assumenda, dolorum nemo rerum obcaecati dolores possimus delectus
+            nulla earum.
+          </p>
+        </div>
+      </aside>
+    </header>
+
+    <section id="about-us">
+      <div class="parallax-layer static-bg"></div>
+
+      <div class="parallax-layer scrolling-img">
+        <img
+          class="image"
+          src="../images/yellow-glass-flowers.png"
+          alt="Yellow Flowers"
+        />
+        <div class="fade-gradient"></div>
+      </div>
+
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+          We are Noir Flowers, providing floral arrangements for the passionate.
+          Our flowers are carefully selected to convey emotions and bring beauty
+          to every occasion.
+        </p>
+      </div>
     </section>
+
+    <form id="contact-section">
+      <div class="contact-container">
+        <div class="contact-form">
+          <h2>Contact Us</h2>
+          <form action="#">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="map-container">
+          <h2>Find Us</h2>
+          <div id="map" style="height: 400px; width: 100%"></div>
+          <div class="map-buttons">
+            <button
+              class="map-btn"
+              onclick="window.open('https://www.google.com/maps/place/iHub/@47.0237623,28.828662,17.72z/data=!4m6!3m5!1s0x40c97c331267ba97:0x7a479de26b401da5!8m2!3d47.0239912!4d28.8291945!16s%2Fg%2F11c575h4kw?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D', '_blank')"
+            >
+              See Us on Google Maps
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>Noir Flowers</h2>
+          <p>Florals for the Passionate</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <table>
+            <tr>
+              <td><a href="index.html" class="active">Home</a></td>
+              <td><a href="about.html">About</a></td>
+            </tr>
+            <tr>
+              <td><a href="shop.html">Shop</a></td>
+              <td><a href="contact.html">Contact</a></td>
+            </tr>
+            <tr>
+              <td><a href="blog.html">Blog</a></td>
+              <td><a href="#">Privacy</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Noir Flowers. All Rights Reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
