@@ -457,17 +457,17 @@ aside .aside-content figcaption {
   font-size: 0.85em;
   color: #aaa;
 }
-
 #about-us {
   position: relative;
-  height: 110vh;
+  height: 120vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
-  background-color: black;
+  background: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+  flex-direction: column;
 }
 
 .parallax-layer {
@@ -485,17 +485,16 @@ aside .aside-content figcaption {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.4;
-  transform: scale(0.8);
-  z-index: 2;
+  transform: scale(0.7);
+  z-index: 1;
 }
 
 .scrolling-img {
-  z-index: 1;
+  z-index: 4;
   overflow: hidden;
   display: flex;
   justify-content: center;
   width: 100vw;
-  opacity: 1;
 }
 
 .scrolling-img img {
@@ -513,17 +512,18 @@ aside .aside-content figcaption {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 50%;
+  height: 30%;
   background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, transparent 100%);
-  z-index: 2;
-  opacity: 1;
+  z-index: 3;
+  pointer-events: none;
 }
 
 .about-content {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   max-width: 800px;
   padding: 20px;
+  top: -5%;
 }
 
 .about-content h2 {
@@ -676,4 +676,320 @@ button:hover,
 
 .map-btn:hover {
   background-color: #2854e2;
+}
+
+#blog-section {
+  padding: 5% 10%;
+}
+
+.blog-title {
+  font-size: 3em;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.blog-post {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 350px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  max-height: 200px;
+}
+
+.blog-post h3 {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.blog-post p {
+  color: #ccc;
+  font-size: 0.95em;
+  margin-top: 10px;
+}
+
+.blog-post a {
+  color: #d88bf9;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.video-post video {
+  border-radius: 12px;
+  margin-bottom: 15px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+#shop {
+  padding: 4% 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3%;
+  padding-bottom: 10%;
+}
+
+.shop-container {
+  display: flex;
+  width: 100%;
+  gap: 3%;
+}
+
+.shop-content {
+  width: 75%;
+}
+
+.shop-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.shop-header h2 {
+  font-size: 2.5em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.shop-header p {
+  font-size: 1.1em;
+  color: #ccc;
+  opacity: 0.8;
+}
+
+.product-list {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6%;
+  width: 100%;
+}
+
+.product-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out;
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-item h3 {
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+.product-item h4 {
+  opacity: 0.7;
+}
+
+.product-item p {
+  font-size: 0.9em;
+  color: #d88bf9;
+  opacity: 0.9;
+}
+
+.product-item button {
+  background: radial-gradient(
+    circle at 45% 50%,
+    #80c7f4 0%,
+    #2854e2 65%,
+    #d88bf9 100%
+  );
+  padding: 10px 15px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: scale(1.05);
+}
+
+.product-item button:hover {
+  transform: scale(1.05);
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-bar {
+  width: 25%;
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(0, 0, 0, 0.2)
+  );
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-section h4 {
+  margin-bottom: 12px;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 5px;
+}
+
+.filter-section label {
+  display: block;
+  margin: 10px 0;
+  font-size: 0.95em;
+  color: #eaeaea;
+  cursor: pointer;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-bar input::placeholder {
+  color: #bbb;
+}
+
+.search-bar input:focus {
+  border-color: #d88bf9;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px #d88bf950;
+}
+
+.price-range {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+}
+
+.price-range input[type="range"] {
+  width: 100%;
+  accent-color: #d88bf9;
+}
+
+.btn-cart {
+  background: radial-gradient(
+    circle at 45% 50%,
+    #80c7f4 0%,
+    #2854e2 65%,
+    #d88bf9 100%
+  );
+  padding: 12px 20px;
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.btn-cart:hover {
+  transform: scale(1.05);
+}
+
+.price-add-to-cart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20%;
+}
+
+.page-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-bar {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .shop-container {
+    flex-direction: column;
+  }
+
+  .shop-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
 }
