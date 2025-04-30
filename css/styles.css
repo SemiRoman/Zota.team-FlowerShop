@@ -10,6 +10,7 @@
 }
 
 .nav-bar {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   position: absolute;
   top: 0;
   left: 0;
@@ -64,7 +65,6 @@ body {
 .landing-page-header-text {
   position: relative;
   height: 100vh;
-  width: 60vw;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -118,7 +118,7 @@ body {
 
 .hero-text {
   font-weight: bold;
-  font-size: 4.5em;
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
   font-family: "Special Gothic Expanded One", sans-serif;
   padding-bottom: 20px;
 }
@@ -136,12 +136,7 @@ span {
 }
 
 #shop-button {
-  background: radial-gradient(
-    circle at 45% 50%,
-    #80c7f4 0%,
-    #2854e2 65%,
-    #d88bf9 100%
-  );
+  background: radial-gradient(circle at 45% 50%, #80c7f4 0%, #2854e2 65%);
   border-radius: 50px;
   display: inline-flex;
   align-items: center;
@@ -160,7 +155,7 @@ span {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
   font-family: "Special Gothic Expanded One", sans-serif;
 }
 
@@ -187,11 +182,11 @@ span {
 
 .counters h1 {
   width: 10%;
-  font-size: 35px;
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
 }
 
 .counters span {
-  font-size: 45%;
+  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
   margin-top: -5px;
   position: absolute;
   background: radial-gradient(
@@ -373,13 +368,13 @@ aside .aside-content figcaption {
 
 .aside-content h3 {
   font-family: "Special Gothic Expanded One", sans-serif;
-  font-size: 1.3em;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   font-weight: bold;
 }
 
 .aside-content p {
   font-size: 0.9em;
-  line-height: 1.3em;
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
   color: #f0f0f0;
 }
 
@@ -394,6 +389,7 @@ aside .aside-content figcaption {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 5;
 }
 
 .footer-container {
@@ -405,21 +401,21 @@ aside .aside-content figcaption {
 
 .footer-logo h2 {
   font-family: "Special Gothic Expanded One", sans-serif;
-  font-size: 1.8em;
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
   color: white;
 }
 
 .footer-logo p {
   color: #ccc;
   margin-top: 8px;
-  font-size: 0.95em;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
 }
 
 .footer-links h3,
 .footer-social h3 {
   font-family: "Special Gothic Expanded One", sans-serif;
   margin-bottom: 15px;
-  font-size: 1.2em;
+  font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
 .footer-links table td {
@@ -454,7 +450,7 @@ aside .aside-content figcaption {
   margin-top: 25px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
-  font-size: 0.85em;
+  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
   color: #aaa;
 }
 #about-us {
@@ -468,6 +464,7 @@ aside .aside-content figcaption {
   text-align: center;
   background: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
   flex-direction: column;
+  /* margin-bottom: -5%; */
 }
 
 .parallax-layer {
@@ -527,13 +524,13 @@ aside .aside-content figcaption {
 }
 
 .about-content h2 {
-  font-size: 3em;
+  font-size: clamp(2rem, 4vw, 3rem);
   font-family: "Special Gothic Expanded One", sans-serif;
   margin-bottom: 30px;
 }
 
 .about-content p {
-  font-size: 1.4em;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
   line-height: 1.8;
 }
 
@@ -757,6 +754,21 @@ button:hover,
   gap: 3%;
 }
 
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.product-link .product-item {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.product-link .product-item:hover {
+  transform: scale(1.02);
+}
+
 .shop-content {
   width: 75%;
 }
@@ -849,7 +861,7 @@ button:hover,
 }
 
 .filter-bar {
-  width: 25%;
+  max-height: 350px;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.05),
@@ -972,11 +984,16 @@ button:hover,
 @media (max-width: 768px) {
   .product-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 3%;
   }
 
   .filter-bar {
     width: 100%;
-    margin-top: 20px;
+  }
+
+  .pagination {
+    margin-top: 50%;
+    margin-bottom: 3%;
   }
 
   .shop-container {
@@ -986,10 +1003,42 @@ button:hover,
   .shop-content {
     width: 100%;
   }
+
+  .glow-aside {
+    display: none;
+  }
+
+  #header {
+    width: 80vw;
+  }
+
+  .scrolling-img img {
+    width: 100vw;
+  }
 }
 
 @media (max-width: 480px) {
   .product-list {
     grid-template-columns: 1fr;
+    gap: 2%;
+  }
+
+  .elements p {
+    display: none;
+  }
+
+  #header {
+    width: 85vw;
+  }
+
+  .counters {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .pagination {
+    margin-top: 150%;
+    margin-bottom: 3%;
   }
 }

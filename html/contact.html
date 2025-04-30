@@ -3,7 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Noir-Flowers Contact</title>
+    <link rel="stylesheet" href="../css/styles-contact.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <section class="header-contact">
+      <ul class="nav-bar">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#about-us">About</a>
+        </li>
+        <li>
+          <a href="#shop">Shop</a>
+        </li>
+        <li>
+          <a href="#blog-section">Blog</a>
+        </li>
+        <li>
+          <a href="#contact-section" class="active">Contact</a>
+        </li>
+      </ul>
+
+      <form id="contact-section">
+        <div class="contact-container">
+          <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="#">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your Message"
+                required
+              ></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+
+          <div class="map-container">
+            <h2>Find Us</h2>
+            <div id="map" style="height: 400px; width: 100%"></div>
+            <div class="map-buttons">
+              <button
+                class="map-btn"
+                onclick="window.open('https://www.google.com/maps/place/iHub/@47.0237623,28.828662,17.72z/data=!4m6!3m5!1s0x40c97c331267ba97:0x7a479de26b401da5!8m2!3d47.0239912!4d28.8291945!16s%2Fg%2F11c575h4kw?entry=ttu&g_ep=EgoyMDI1MDQyMC4wIKXMDSoASAFQAw%3D%3D', '_blank')"
+              >
+                See Us on Google Maps
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <div class="header-images">
+        <div class="colored-flowers" id="reversed">
+          <img src="..\images\flower-glass-incolor1.png" alt="" id="img1" />
+          <img src="..\images\flower-glass-incolor2.png" alt="" id="img2" />
+          <img src="..\images\flower-glass-incolor3.png" alt="" id="img3" />
+        </div>
+
+        <div class="incolor-flowers" id="reversed">
+          <img src="..\images\flower-glass-color1.png" alt="" id="img4" />
+          <img src="..\images\flower-glass-color2.png" alt="" id="img5" />
+          <img src="..\images\flower-glass-color3.png" alt="" id="img6" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2>Noir Flowers</h2>
+          <p>Florals for the Passionate</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <table>
+            <tr>
+              <td><a href="index.html">Home</a></td>
+              <td><a href="about.html">About</a></td>
+            </tr>
+            <tr>
+              <td><a href="#shop">Shop</a></td>
+              <td><a href="contact.html" class="active">Contact</a></td>
+            </tr>
+            <tr>
+              <td><a href="blog.html">Blog</a></td>
+              <td><a href="#">Privacy</a></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Noir Flowers. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

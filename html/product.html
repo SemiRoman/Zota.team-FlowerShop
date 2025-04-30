@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/styles-product.css" />
+    <link rel="stylesheet" href="../css/styles-contact.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="header-product">
+      <ul class="nav-bar">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#about-us">About</a>
+        </li>
+        <li>
+          <a href="#shop" class="active">Shop</a>
+        </li>
+        <li>
+          <a href="#blog-section">Blog</a>
+        </li>
+        <li>
+          <a href="contact.html">Contact</a>
+        </li>
+      </ul>
+
+      <div class="product-detail-container" id="product-section">
+        <div class="product-image-carousel">
+          <div class="carousel-arrow prev" id="prev-arrow">&#10094;</div>
+          <img id="product-image" alt="Product image" />
+          <div class="carousel-arrow next" id="next-arrow">&#10095;</div>
+          <div class="thumbnail-carousel"></div>
+        </div>
+
+        <div class="product-info">
+          <h1 id="product-name"></h1>
+          <h4 id="product-category"></h4>
+          <p id="product-description"></p>
+          <p id="product-price"></p>
+
+          <div class="buttons">
+            <button class="add-to-cart">Add to Cart</button>
+            <button class="buy-now">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <script src="../js/products.js"></script>
+      <script src="../js/scripts.js"></script>
+      <script>
+        window.onload = function () {
+          const params = new URLSearchParams(window.location.search);
+          const productId = parseInt(params.get("id"));
+          const product = products.find((p) => p.id === productId);
+
+          if (product) {
+            document.getElementById("product-name").textContent = product.name;
+            document.getElementById("product-category").textContent =
+              product.category;
+            document.getElementById("product-description").textContent =
+              product.description;
+            document.getElementById(
+              "product-price"
+            ).textContent = `$${product.price.toFixed(2)}`;
+
+            const image = document.getElementById("product-image");
+            image.src = product.image;
+            image.alt = product.name;
+
+            const thumbnails = document.querySelector(".thumbnail-carousel");
+            product.images.forEach((imageSrc, index) => {
+              const thumb = document.createElement("img");
+              thumb.classList.add("thumbnail");
+              thumb.src = imageSrc;
+              thumb.alt = `Thumbnail ${index + 1}`;
+              thumb.addEventListener("click", function () {
+                image.src = imageSrc;
+              });
+              thumbnails.appendChild(thumb);
+            });
+
+            let currentIndex = 0;
+
+            function updateMainImage() {
+              image.src = product.images[currentIndex];
+            }
+
+            const prevArrow = document.getElementById("prev-arrow");
+            const nextArrow = document.getElementById("next-arrow");
+
+            prevArrow.addEventListener("click", function () {
+              currentIndex =
+                (currentIndex - 1 + product.images.length) %
+                product.images.length;
+              updateMainImage();
+            });
+
+            nextArrow.addEventListener("click", function () {
+              currentIndex = (currentIndex + 1) % product.images.length;
+              updateMainImage();
+            });
+
+            setInterval(function () {
+              currentIndex = (currentIndex + 1) % product.images.length;
+              updateMainImage();
+            }, 3000);
+          } else {
+            document.body.innerHTML = "<h2>Product not found.</h2>";
+          }
+        };
+      </script>
+
+      <div class="header-images">
+        <div class="colored-flowers" id="reversed">
+          <img src="..\images\flower-glass-incolor1.png" alt="" id="img1" />
+          <img src="..\images\flower-glass-incolor2.png" alt="" id="img2" />
+          <img src="..\images\flower-glass-incolor3.png" alt="" id="img3" />
+        </div>
+
+        <div class="incolor-flowers" id="reversed">
+          <img src="..\images\flower-glass-color1.png" alt="" id="img4" />
+          <img src="..\images\flower-glass-color2.png" alt="" id="img5" />
+          <img src="..\images\flower-glass-color3.png" alt="" id="img6" />
+        </div>
+      </div>
+    </section>
+
+    <!-- <div id="cart-menu" class="cart-menu">
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+    </div> -->
+  </body>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h2>Noir Flowers</h2>
+        <p>Florals for the Passionate</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <table>
+          <tr>
+            <td><a href="index.html" class="active">Home</a></td>
+            <td><a href="about.html">About</a></td>
+          </tr>
+          <tr>
+            <td><a href="shop.html">Shop</a></td>
+            <td><a href="contact.html">Contact</a></td>
+          </tr>
+          <tr>
+            <td><a href="blog.html">Blog</a></td>
+            <td><a href="#">Privacy</a></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Noir Flowers. All Rights Reserved.</p>
+    </div>
+  </footer>
+</html>

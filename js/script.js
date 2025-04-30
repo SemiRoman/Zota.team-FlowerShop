@@ -56,6 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(aboutUs);
 });
 
+const items = document.querySelectorAll(".product-item");
+items.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    const product = products[index];
+    if (product) {
+      window.location.href = `product.html?id=${product.id}`;
+    }
+  });
+});
+//
+//
+//
 // document.addEventListener("DOMContentLoaded", function () {
 //   const searchInput = document.getElementById("search");
 //   const categoryFilters = document.querySelectorAll('input[name="category"]');
@@ -108,3 +120,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //   filterProducts();
 // });
+// //
+// //
+// //
+// const cart = [];
+// const cartMenu = document.getElementById("cart-menu");
+// const cartItemsList = document.getElementById("cart-items");
+// const cartTotalEl = document.getElementById("cart-total");
+
+// document.querySelector(".add-to-cart").addEventListener("click", () => {
+//   const params = new URLSearchParams(window.location.search);
+//   const productId = parseInt(params.get("id"));
+//   const product = products.find((p) => p.id === productId);
+//   if (!product) return;
+
+//   const existingItem = cart.find((item) => item.id === product.id);
+//   if (existingItem) {
+//     existingItem.quantity += 1;
+//   } else {
+//     cart.push({ ...product, quantity: 1 });
+//   }
+
+//   updateCartUI();
+//   cartMenu.classList.remove("hidden"); // Optional if you removed it from HTML
+// });
+
+// function updateCartUI() {
+//   cartItemsList.innerHTML = "";
+//   let total = 0;
+
+//   cart.forEach((item, index) => {
+//     total += item.price * item.quantity;
+//     const li = document.createElement("li");
+//     li.innerHTML = `
+//         <span>${item.name} ($${item.price.toFixed(2)})</span>
+//         <div>
+//           <button onclick="decreaseQuantity(${index})">-</button>
+//           <span>${item.quantity}</span>
+//           <button onclick="increaseQuantity(${index})">+</button>
+//         </div>
+//       `;
+//     cartItemsList.appendChild(li);
+//   });
+
+//   cartTotalEl.textContent = total.toFixed(2);
+// }
+
+// window.increaseQuantity = function (index) {
+//   cart[index].quantity++;
+//   updateCartUI();
+// };
+
+// window.decreaseQuantity = function (index) {
+//   if (cart[index].quantity > 1) {
+//     cart[index].quantity--;
+//   } else {
+//     cart.splice(index, 1);
+//   }
+//   updateCartUI();
+// };
