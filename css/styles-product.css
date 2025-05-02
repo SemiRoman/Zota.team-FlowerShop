@@ -197,41 +197,72 @@ p {
   left: 45%;
 }
 
-.cart-menu {
+.cart-items {
   position: fixed;
-  top: 80px;
+  top: 20px;
   right: 20px;
   width: 300px;
   background: #fff;
   border: 1px solid #ccc;
+  border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 9999;
-  max-height: 400px;
-  overflow-y: auto;
-  border-radius: 10px;
   font-family: "Roboto", sans-serif;
+  display: block; /* Make it hidden initially */
 }
 
-.cart-menu.hidden {
-  display: none;
+.cart-items.show {
+  display: block; /* Make it visible when needed */
 }
 
-.cart-menu ul {
-  list-style: none;
-  padding: 0;
+.cart-items h3 {
+  margin-top: 0;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
 }
 
-.cart-menu li {
+.cart-items .cart-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-.cart-menu button {
-  margin: 0 5px;
-  padding: 2px 8px;
-  font-size: 14px;
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 6px;
+}
+
+.cart-item-info {
+  flex-grow: 1;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-item button {
+  background: none;
+  border: none;
   cursor: pointer;
+  font-size: 16px;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #999;
+}
+
+.cart-total {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: right;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
 }

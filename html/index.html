@@ -124,7 +124,9 @@
                   </p>
                   <div class="price-add-to-cart">
                     <span class="product-price">$25.00</span>
-                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="add-to-cart-btn" data-id="1">
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
@@ -324,6 +326,7 @@
 
           <button id="cart-btn" class="btn-cart">
             <i class="fa-solid fa-cart-shopping"></i> Cart
+            <span id="cart-count" class="cart-count">0</span>
           </button>
         </div>
       </div>
@@ -409,14 +412,12 @@
     </footer>
     <script src="../js/script.js"></script>
     <script src="../js/products.js"></script>
+    <script src="../js/shop.js"></script>
   </body>
 </html>
 
 <!-- TO DO:
--pagina aparte de contact
--pagina product details
 -carousel/slider
--responsive
 -link la butoane
 -butoanele un pic mai putin stilizate
 -cand dam scroll sa vina si filtrele dupa noi

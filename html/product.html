@@ -117,6 +117,78 @@
           }
         };
       </script>
+      <script>
+        let cart = [];
+
+        function updateCartUI() {
+          const cartItemsContainer = document.getElementById("cart-items");
+          cartItemsContainer.innerHTML = "";
+
+          if (cart.length === 0) {
+            cartItemsContainer.innerHTML =
+              '<p class="empty-cart">Your cart is empty.</p>';
+            return;
+          }
+
+          cart.forEach((item, index) => {
+            const div = document.createElement("div");
+            div.className = "cart-item";
+
+            div.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" />
+        <div class="cart-item-info">
+          <p>${item.name}</p>
+          <p>$${item.price.toFixed(2)}</p>
+        </div>
+        <div class="cart-item-controls">
+          <button onclick="changeQty(${index}, -1)">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="changeQty(${index}, 1)">+</button>
+          <button onclick="removeItem(${index})">🗑️</button>
+        </div>
+      `;
+            cartItemsContainer.appendChild(div);
+          });
+        }
+
+        function changeQty(index, delta) {
+          cart[index].quantity += delta;
+          if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+          }
+          updateCartUI();
+        }
+
+        function removeItem(index) {
+          cart.splice(index, 1);
+          updateCartUI();
+        }
+
+        document.querySelector(".add-to-cart").addEventListener("click", () => {
+          const productName =
+            document.getElementById("product-name").textContent;
+          const productPrice = parseFloat(
+            document
+              .getElementById("product-price")
+              .textContent.replace("$", "")
+          );
+          const productImage = document.getElementById("product-image").src;
+
+          const existing = cart.find((item) => item.name === productName);
+          if (existing) {
+            existing.quantity++;
+          } else {
+            cart.push({
+              name: productName,
+              price: productPrice,
+              image: productImage,
+              quantity: 1,
+            });
+          }
+
+          updateCartUI();
+        });
+      </script>
 
       <div class="header-images">
         <div class="colored-flowers" id="reversed">
@@ -133,11 +205,10 @@
       </div>
     </section>
 
-    <!-- <div id="cart-menu" class="cart-menu">
-      <h3>Your Cart</h3>
-      <ul id="cart-items"></ul>
-      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
-    </div> -->
+    <div id="cart-items" class="cart-items">
+      <p class="empty-cart">Your cart is empty.</p>
+    </div>
+    <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
   </body>
 
   <footer class="footer">

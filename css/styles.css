@@ -752,6 +752,8 @@ button:hover,
   display: flex;
   width: 100%;
   gap: 3%;
+  align-items: flex-start;
+  position: relative;
 }
 
 .product-link {
@@ -862,6 +864,7 @@ button:hover,
 
 .filter-bar {
   max-height: 350px;
+  min-width: 325px;
   background: linear-gradient(
     145deg,
     rgba(255, 255, 255, 0.05),
@@ -875,6 +878,8 @@ button:hover,
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 20px;
 }
 
 .filter-section h4 {
@@ -958,6 +963,21 @@ button:hover,
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: crimson;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  display: none;
+  min-width: 20px;
+  text-align: center;
 }
 
 .pagination {
